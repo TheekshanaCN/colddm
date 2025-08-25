@@ -13,7 +13,7 @@ SHEET_NAME = "sheet"  # Tab name in your sheet
 
 # ---- Load credentials from environment variable ----
 # Set this in your system / Streamlit Cloud secrets as: GOOGLE_CREDS
-service_account_info = json.loads(os.environ["GOOGLE_CREDS"])
+service_account_info = json.loads(os.environ.get("GOOGLE_CREDS"))
 creds = Credentials.from_service_account_info(service_account_info, scopes=SCOPE)
 client = gspread.authorize(creds)
 
